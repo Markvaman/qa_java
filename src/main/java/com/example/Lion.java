@@ -33,3 +33,4 @@ public class Lion {
         return feline.getFood("Хищник");
     }
 }
+

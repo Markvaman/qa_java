@@ -18,7 +18,7 @@ public class FelineTest {
     @Spy
     private Feline feline;
     @Test
-    public void checkFelineEatMeat() throws Exception {
+    public void felineEatMeatTest() throws Exception {
         Mockito.when(feline.getFood("Хищник")).thenReturn(List.of("Животные", "Птицы", "Рыба")); //здесь заглушка,
         // чтобы метод гетфуд с параметром хищник
         // всегда возвращал конкретно этот список, даже если в Энимал список изменится
@@ -26,13 +26,13 @@ public class FelineTest {
     }
 
     @Test
-    public void testGetFamilyReturnFeline() {
+    public void getFamilyReturnFelineTest() {
         String expected = "Кошачьи";
         assertEquals(expected, feline.getFamily());
     }
 
     @Test
-    public void testGetKittensReturnOne() {
+    public void getKittensReturnOneTest() {
         int expected = 1;
         assertEquals(expected, feline.getKittens());
     }

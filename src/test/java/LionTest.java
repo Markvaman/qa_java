@@ -18,14 +18,14 @@ public class LionTest {
     @Mock
     Feline feline;
     @Test
-    public void getKittensMethodReturnOne() {
+    public void getKittensMethodReturnOneTest() {
         Lion lion = new Lion(feline);
         Mockito.when(feline.getKittens()).thenReturn(1);
         assertEquals(1, lion.getKittens());
     }
 
     @Test (expected = Exception.class)
-    public void testConstructorException() throws Exception {
+    public void constructorExceptionTest() throws Exception {
         try {
             Lion lion = new Lion("Оно");
         } catch (Exception e) {
@@ -35,13 +35,13 @@ public class LionTest {
     }
 
     @Test
-    public void testLionHasMane() throws Exception {
+    public void lionHasManeTest() throws Exception {
         Lion lion = new Lion("Самец");
         assertEquals(lion.hasMane, lion.doesHaveMane());
     }
 
     @Test
-    public void testLionGetsFood() throws Exception {
+    public void lionGetsFoodTest() throws Exception {
         Lion lion = new Lion(feline);
         Mockito.when(feline.getFood(Mockito.anyString())).thenReturn(List.of("Животные", "Птицы", "Рыба"));
         assertEquals(List.of("Животные", "Птицы", "Рыба"), lion.getFood());
